@@ -21,6 +21,7 @@ public class SelectedMealActivity extends AppCompatActivity {
         //getting data from mainActivity File
         String mealName = intent.getStringExtra(MainActivity.MEAL_NAME);
 
+
         //setting the data For the textView
         MealNameTextView.setText(mealName);
 

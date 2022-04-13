@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     //Variable para poner en Intent para pasarlo a otro activity
     public static final String MEAL_NAME = "com.example.MealData";
 
+
     ActivityMainBinding binding;
 
     //la variable userList originalmente fue por que este app era para una lista de usarios Luego cambie de idea LOL XD
@@ -69,15 +70,18 @@ public class MainActivity extends AppCompatActivity {
       });
     }
 
+
     //function to open a new View when selected item from list
     public void  openSelectedMealActivity(String mealName) {
 
-
         Intent intent = new Intent(this, SelectedMealActivity.class);
         intent.putExtra(MEAL_NAME, mealName);
+
         startActivity(intent);
 
     }
+
+
 
     class fetchData extends Thread{
 
