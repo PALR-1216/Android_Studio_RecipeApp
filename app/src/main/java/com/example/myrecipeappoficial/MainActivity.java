@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                     model.setMealCategory(mealJsonData.getString("strCategory"));
                     model.setMealImage(mealJsonData.getString("strMealThumb"));
 
+
                     meal_data.add(model);
                 }
 

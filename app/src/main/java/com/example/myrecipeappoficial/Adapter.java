@@ -6,6 +6,7 @@ import android.media.TimedText;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,10 +24,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     private Context context;
     private List<MealModelClass>meal_data;
 
+
     public Adapter(Context context, List<MealModelClass> meal_data) {
         this.context = context;
         this.meal_data = meal_data;
     }
+
 
 
 
@@ -46,6 +49,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         holder.name.setText(meal_data.get(position).getMealName());
         holder.category.setText(meal_data.get(position).getMealCategory());
         Glide.with(context).load(meal_data.get(position).getMealImage()).into(holder.image);
+
+
+
 
 
 
@@ -72,12 +78,21 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             category = itemView.findViewById(R.id.meal_category_txt);
             image = itemView.findViewById(R.id.meal_image);
 
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                   System.out.println("Clicked");
+                    Intent i = new Intent(context, SelectedItems.class);
+
                 }
             });
+
         }
+
+
     }
+
+
+
+
 }

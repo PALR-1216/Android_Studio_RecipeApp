@@ -4,6 +4,7 @@ public class MealModelClass {
     String mealName;
     String mealCategory;
     String MealImage;
+    String description;
 
     public MealModelClass(String mealName, String mealCategory, String mealImage) {
         this.mealName = mealName;
@@ -36,5 +37,13 @@ public class MealModelClass {
 
     public void setMealImage(String mealImage) {
         MealImage = mealImage;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
