@@ -1,12 +1,17 @@
 package com.example.myrecipeappoficial;
 
+// Search query == https://www.themealdb.com/api/json/v1/1/search.php?s=p
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,9 +38,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         meal_data = new ArrayList<>();
         recyclerView = findViewById(R.id.mealRecyclerView);
+
+
 
         GetData getData = new GetData();
         getData.execute();
@@ -114,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                     meal_data.add(model);
+
+
                 }
 
 
@@ -127,10 +135,21 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void PutDataIntoRecyclerView(List<MealModelClass>meal_data) {
-        Adapter adapter = new Adapter(this,meal_data);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        Adapter adapter = new Adapter(this, meal_data, new Adapter.ItemClickListener() {
+            @Override
+            public void onItemClick(MealModelClass meal_data) {
+                ShowToast(meal_data.getMealName());
+            }
+        });
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+
+    }
+
+    private void ShowToast(String message) {
+        Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
     }
 
 }
