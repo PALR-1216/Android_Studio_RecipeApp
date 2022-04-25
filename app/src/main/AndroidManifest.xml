@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyRecipeAppOficial">
         <activity
-            android:name=".SelectedItems"
+            android:name=".SelectedActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -5,6 +5,25 @@ public class MealModelClass {
     String mealCategory;
     String MealImage;
     String description;
+    String youtubeLink;
+
+    public String getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
+    }
+
+    String instructions;
+
+    public String getYoutubeLink() {
+        return youtubeLink;
+    }
+
+    public void setYoutubeLink(String youtubeLink) {
+        this.youtubeLink = youtubeLink;
+    }
 
     public MealModelClass(String mealName, String mealCategory, String mealImage) {
         this.mealName = mealName;

@@ -117,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
                     model.setMealName(mealJsonData.getString("strMeal"));
                     model.setMealCategory(mealJsonData.getString("strCategory"));
                     model.setMealImage(mealJsonData.getString("strMealThumb"));
+                    model.setYoutubeLink(mealJsonData.getString("strYoutube"));
+                    model.setInstructions(mealJsonData.getString("strInstructions"));
 
 
                     meal_data.add(model);
@@ -139,7 +141,10 @@ public class MainActivity extends AppCompatActivity {
         Adapter adapter = new Adapter(this, meal_data, new Adapter.ItemClickListener() {
             @Override
             public void onItemClick(MealModelClass meal_data) {
-                ShowToast(meal_data.getMealName());
+
+               Intent intent = new Intent(MainActivity.this, SelectedActivity.class);
+                intent.putExtra("MealName", meal_data.getMealName());
+                startActivity(intent);
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
