@@ -51,7 +51,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.name.setText(meal_data.get(position).getMealName());
-        holder.category.setText(meal_data.get(position).getMealCategory());
+//        holder.category.setText(meal_data.get(position).getMealCategory());
         Glide.with(context).load(meal_data.get(position).getMealImage()).into(holder.image);
 
         holder.itemView.setOnClickListener(view ->{
@@ -73,7 +73,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     public class MyViewHolder  extends  RecyclerView.ViewHolder{
 
         TextView name;
-        TextView category;
+
         ImageView image;
 
 
@@ -81,7 +81,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             super(itemView);
 
             name = itemView.findViewById(R.id.meal_name_txt);
-            category = itemView.findViewById(R.id.meal_category_txt);
+//            category = itemView.findViewById(R.id.meal_category_txt);
             image = itemView.findViewById(R.id.meal_image);
 
 
