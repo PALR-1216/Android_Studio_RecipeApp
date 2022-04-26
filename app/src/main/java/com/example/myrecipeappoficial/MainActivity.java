@@ -144,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
 
                Intent intent = new Intent(MainActivity.this, SelectedActivity.class);
                 intent.putExtra("MealName", meal_data.getMealName());
+                intent.putExtra("mealImage", meal_data.getMealImage());
+                intent.putExtra("instructions", meal_data.getInstructions());
                 startActivity(intent);
             }
         });
@@ -153,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //a simple function to show a Toast
     private void ShowToast(String message) {
         Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
     }
