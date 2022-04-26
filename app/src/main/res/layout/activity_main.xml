@@ -7,7 +7,10 @@
     android:focusable="false"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
+<androidx.recyclerview.widget.RecyclerView
+
+
+
         android:id="@+id/mealRecyclerView"
         android:layout_width="409dp"
         android:layout_height="729dp"
@@ -19,4 +22,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

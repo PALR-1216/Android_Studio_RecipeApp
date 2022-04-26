@@ -20,6 +20,7 @@ public class SelectedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selected);
 
+        //VARIABLES
         String myMealName = getIntent().getStringExtra("MealName");
         String selectedMealImage = getIntent().getStringExtra("mealImage");
         String selectedInstructions = getIntent().getStringExtra("instructions");
@@ -32,6 +33,8 @@ public class SelectedActivity extends AppCompatActivity {
         mealName.setText(myMealName);
         instructions.setMovementMethod(new ScrollingMovementMethod());
         instructions.setText(selectedInstructions);
+        //using Glide implementation to load image
+        Glide.with(this).load(selectedMealImage).into(mealImage);
 
 
         youtubeLinkButton.setOnClickListener(new View.OnClickListener() {

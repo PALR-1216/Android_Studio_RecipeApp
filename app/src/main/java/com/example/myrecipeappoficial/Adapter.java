@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.behavior.HideBottomViewOnScrollBehavior;
 
 import org.w3c.dom.Text;
 
@@ -58,6 +59,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             itemClickListener.onItemClick(meal_data.get(position));
         });
 
+
     }
 
 
@@ -73,7 +75,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     public class MyViewHolder  extends  RecyclerView.ViewHolder{
 
         TextView name;
-
         ImageView image;
 
 
