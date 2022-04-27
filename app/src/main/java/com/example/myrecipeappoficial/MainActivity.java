@@ -146,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("MealName", meal_data.getMealName());
                 intent.putExtra("mealImage", meal_data.getMealImage());
                 intent.putExtra("instructions", meal_data.getInstructions());
+                intent.putExtra("youtubeLink", meal_data.getYoutubeLink());
                 startActivity(intent);
             }
         });

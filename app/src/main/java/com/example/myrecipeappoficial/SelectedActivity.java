@@ -2,6 +2,8 @@ package com.example.myrecipeappoficial;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -11,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+
+import java.net.URL;
 
 public class SelectedActivity extends AppCompatActivity {
 
@@ -24,6 +28,7 @@ public class SelectedActivity extends AppCompatActivity {
         String myMealName = getIntent().getStringExtra("MealName");
         String selectedMealImage = getIntent().getStringExtra("mealImage");
         String selectedInstructions = getIntent().getStringExtra("instructions");
+        String youtubeLink = getIntent().getStringExtra("youtubeLink");
         TextView mealName = (TextView) findViewById(R.id.selectedMealName);
         TextView instructions = (TextView) findViewById(R.id.selectedInstructions);
         ImageView mealImage = (ImageView) findViewById(R.id.selectedMealImage);
@@ -40,13 +45,19 @@ public class SelectedActivity extends AppCompatActivity {
         youtubeLinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
+//                Toast.makeText(SelectedActivity.this, "clicked", Toast.LENGTH_SHORT).show();
+                openYoutube(youtubeLink);
             }
         });
-
 
        //Toast.makeText(this,myMealName,Toast.LENGTH_SHORT).show();
 
     }
+
+    //function to open the youtubeLink
+    public void openYoutube(String url) {
+        Intent Opener = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(Opener);
+    }
+
 }
